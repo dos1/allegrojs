@@ -1864,7 +1864,7 @@ function clamp(value,min,max)
 /// @return scaled value
 function scale(value,min1,max1,min2,max2)
 {
-	return min2 + ((value - min) / (max - min)) * (max2 - min2);
+	return min2 + ((value - min1) / (max1 - min1)) * (max2 - min2);
 }
 
 /// Scales value from one range to another and clamps it down
@@ -1874,7 +1874,7 @@ function scale(value,min1,max1,min2,max2)
 /// @return scaled and clamped value
 function scaleclamp(value,min1,max1,min2,max2)
 {
-	value = min2 + ((value - min) / (max - min)) * (max2 - min2);
+	value = min2 + ((value - min1) / (max1 - min1)) * (max2 - min2);
 	if (max2 > min2)
 	{
 		value = value < max2 ? value : max2;
